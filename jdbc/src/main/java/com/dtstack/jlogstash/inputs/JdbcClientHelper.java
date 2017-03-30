@@ -3,6 +3,7 @@ package com.dtstack.jlogstash.inputs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -30,7 +31,8 @@ public class JdbcClientHelper {
         Thread.currentThread().setContextClassLoader(null);
 
         // 加载驱动包
-        URL file_url = new URL("file:/" + config.getJdbc_driver_library());
+        File driverJarFile = new File(config.getJdbc_driver_library());
+        URL file_url = driverJarFile.toURI().toURL();
         URLClassLoader loader = new URLClassLoader(new URL[]{file_url}, JdbcClientHelper.class.getClassLoader());
 
         // 用户名、密码
