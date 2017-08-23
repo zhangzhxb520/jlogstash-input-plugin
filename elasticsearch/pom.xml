@@ -8,6 +8,12 @@
     <artifactId>input.elasticsearch</artifactId>
     <version>1.0.0</version>
 
+    <parent>
+        <groupId>com.dtstack.jlogstash</groupId>
+        <artifactId>input</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
     <dependencies>
         <dependency>
             <groupId>com.dtstack.jlogstash</groupId>

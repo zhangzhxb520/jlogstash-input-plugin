@@ -10,6 +10,12 @@
 	<description>input plugin beats</description>
 	<url>https://github.com/DTStack/jlogstash-input-plugin/tree/master/beats</url>
 
+	<parent>
+		<groupId>com.dtstack.jlogstash</groupId>
+		<artifactId>input</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -108,7 +114,7 @@
 				</executions>
 			</plugin>
 
-			<plugin>
+			<!--<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
 				<version>1.6</version>
@@ -121,7 +127,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</build>
 
