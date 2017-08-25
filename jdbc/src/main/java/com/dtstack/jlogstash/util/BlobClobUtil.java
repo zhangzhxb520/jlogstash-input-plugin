@@ -25,7 +25,7 @@ public class BlobClobUtil {
         InputStream inputStream = null;
         ByteArrayOutputStream baos = null;
         try {
-            inputStream = blob.getBinaryStream();
+            inputStream = new BufferedInputStream(blob.getBinaryStream(), 2048);
             baos = new ByteArrayOutputStream();
             IOUtils.copy(inputStream, baos, new byte[2048]);
             return baos.toByteArray();
@@ -34,8 +34,8 @@ public class BlobClobUtil {
         } catch (IOException e) {
             logger.error("convertBlob2Bytes error!", e);
         } finally {
-            IOUtils.closeQuietly(baos);
             IOUtils.closeQuietly(inputStream);
+            IOUtils.closeQuietly(baos);
         }
         return null;
     }
